@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn" value="提交" />
+		<script type="text/javascript">
+			window.onload = function(){
+				var text = document.getElementById("text");
+				var btn = document.getElementById("btn");
+				
+				btn.onclick = function(){
+					var val = text.value;
+					if(val){
+						//第一位不能为0，5-11位，纯数字
+						var re = /^[1-9]\d{4,10}$/;
+						if(re.test(val)){
+							alert("是QQ号");
+						}else{
+							alert("不是QQ")
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
